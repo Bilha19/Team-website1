@@ -1,5 +1,5 @@
 /* =====================================================
-   Team website script (CSC 216, Lab 2)
+   Our team website lab 2
    Loaded on every page with `defer`, so the HTML is
    fully parsed before any of this code runs.
    ===================================================== */
@@ -44,29 +44,32 @@ if (themeToggle) {
     localStorage.setItem(THEME_KEY, newTheme);
   });
 }
-function renderProjects(filter) {
-  const visible = filter === 'all'
-    ? projects
-    : projects.filter((project) => project.category === filter);
 
-  p/* ---------- 2. Projects page ---------- */
+/* ---------- 2. Projects page ---------- */
 
 const projects = [
   { title: 'Personal landing page', category: 'html', description: 'A single semantic HTML page with headings, lists and links.' },
   { title: 'Responsive card grid', category: 'css', description: 'A layout that goes from one column on phones to three on laptops.' },
+  { title: "Git and GitHub Practice",category: "git",description: "A project demonstrating version control, repository management and collaboration using Git and GitHub."},
   { title: 'Tip calculator', category: 'js', description: 'Reads two inputs and updates the total as you type.' },
   { title: 'Accessible contact form', category: 'html', description: 'Labelled fields, helpful errors and keyboard-friendly controls.' },
   { title: 'Dark mode toggle', category: 'js', description: 'Switches the colour theme and remembers the choice.' },
+  {title: "Personal Portfolio",category: "web",description: "A personal website showcasing my skills, interests and web development projects."},
   { title: 'Flexbox navigation bar', category: 'css', description: 'A header that collapses into a menu button on small screens.' }
 ];
 
-const categoryNames = { html: 'HTML', css: 'CSS', js: 'JavaScript' };
+const categoryNames = { html: 'HTML', css: 'CSS', js: 'JavaScript', git: 'Git', web: 'Web' };
 
 const projectList = document.querySelector('#project-list');
 const projectCount = document.querySelector('#project-count');
 const filterButtons = document.querySelectorAll('.filter-btn');
 
-furojectList.replaceChildren();
+function renderProjects(filter) {
+  const visible = filter === 'all'
+    ? projects
+    : projects.filter((project) => project.category === filter);
+
+  projectList.replaceChildren();
 
   visible.forEach((project) => {
     const card = document.createElement('article');
@@ -116,7 +119,6 @@ if (form) {
     charCount.textContent = messageInput.value.length;
   });
 
-
   // Show (or clear) the error message under one field.
   function showError(input, message) {
     const errorEl = document.querySelector(`#${input.id}-error`);
@@ -164,7 +166,7 @@ if (form) {
 
     const firstName = nameInput.value.trim().split(' ')[0];
     statusEl.textContent = `Thanks, ${firstName}! Your message is ready. (We connect this form to a real server later.)`;
-    form.reset(); 
+    form.reset();
     charCount.textContent = '0';
   });
 }
