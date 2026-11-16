@@ -116,6 +116,7 @@ if (form) {
     charCount.textContent = messageInput.value.length;
   });
 
+  
   // Show (or clear) the error message under one field.
   function showError(input, message) {
     const errorEl = document.querySelector(`#${input.id}-error`);
@@ -163,7 +164,7 @@ if (form) {
 
     const firstName = nameInput.value.trim().split(' ')[0];
     statusEl.textContent = `Thanks, ${firstName}! Your message is ready. (We connect this form to a real server later.)`;
-    form.reset();
+    form.reset(); 
     charCount.textContent = '0';
   });
 }
