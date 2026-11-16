@@ -50,13 +50,15 @@ if (themeToggle) {
 const projects = [
   { title: 'Personal landing page', category: 'html', description: 'A single semantic HTML page with headings, lists and links.' },
   { title: 'Responsive card grid', category: 'css', description: 'A layout that goes from one column on phones to three on laptops.' },
+  { title: "Git and GitHub Practice",category: "git",description: "A project demonstrating version control, repository management and collaboration using Git and GitHub."},
   { title: 'Tip calculator', category: 'js', description: 'Reads two inputs and updates the total as you type.' },
   { title: 'Accessible contact form', category: 'html', description: 'Labelled fields, helpful errors and keyboard-friendly controls.' },
   { title: 'Dark mode toggle', category: 'js', description: 'Switches the colour theme and remembers the choice.' },
+  {title: "Personal Portfolio",category: "web",description: "A personal website showcasing my skills, interests and web development projects."},
   { title: 'Flexbox navigation bar', category: 'css', description: 'A header that collapses into a menu button on small screens.' }
 ];
 
-const categoryNames = { html: 'HTML', css: 'CSS', js: 'JavaScript' };
+const categoryNames = { html: 'HTML', css: 'CSS', js: 'JavaScript', git: 'Git', web: 'Web' };
 
 const projectList = document.querySelector('#project-list');
 const projectCount = document.querySelector('#project-count');
