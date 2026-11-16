@@ -44,12 +44,8 @@ if (themeToggle) {
     localStorage.setItem(THEME_KEY, newTheme);
   });
 }
-function renderProjects(filter) {
-  const visible = filter === 'all'
-    ? projects
-    : projects.filter((project) => project.category === filter);
 
-  p/* ---------- 2. Projects page ---------- */
+/* ---------- 2. Projects page ---------- */
 
 const projects = [
   { title: 'Personal landing page', category: 'html', description: 'A single semantic HTML page with headings, lists and links.' },
@@ -66,7 +62,12 @@ const projectList = document.querySelector('#project-list');
 const projectCount = document.querySelector('#project-count');
 const filterButtons = document.querySelectorAll('.filter-btn');
 
-furojectList.replaceChildren();
+function renderProjects(filter) {
+  const visible = filter === 'all'
+    ? projects
+    : projects.filter((project) => project.category === filter);
+
+  projectList.replaceChildren();
 
   visible.forEach((project) => {
     const card = document.createElement('article');
@@ -116,7 +117,6 @@ if (form) {
     charCount.textContent = messageInput.value.length;
   });
 
-
   // Show (or clear) the error message under one field.
   function showError(input, message) {
     const errorEl = document.querySelector(`#${input.id}-error`);
@@ -164,7 +164,7 @@ if (form) {
 
     const firstName = nameInput.value.trim().split(' ')[0];
     statusEl.textContent = `Thanks, ${firstName}! Your message is ready. (We connect this form to a real server later.)`;
-    form.reset(); 
+    form.reset();
     charCount.textContent = '0';
   });
 }
