@@ -1,5 +1,5 @@
 /* =====================================================
-   Team website script (CSC 216, Lab 2)
+   Our team website lab 2
    Loaded on every page with `defer`, so the HTML is
    fully parsed before any of this code runs.
    ===================================================== */
