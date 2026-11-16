@@ -44,7 +44,7 @@ if (themeToggle) {
     localStorage.setItem(THEME_KEY, newTheme);
   });
 }
-nction renderProjects(filter) {
+function renderProjects(filter) {
   const visible = filter === 'all'
     ? projects
     : projects.filter((project) => project.category === filter);
@@ -116,7 +116,7 @@ if (form) {
     charCount.textContent = messageInput.value.length;
   });
 
-  
+
   // Show (or clear) the error message under one field.
   function showError(input, message) {
     const errorEl = document.querySelector(`#${input.id}-error`);
